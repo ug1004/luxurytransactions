@@ -1,4 +1,4 @@
-# Luxury transactions
+# A Blockchain System for History Management of Luxury
 Luxury transactions implemented with blockchain technology
 
 # ulsan-project
