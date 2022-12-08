@@ -34,7 +34,7 @@ docker volume prune
 ```
   2. 네트워크 수행
 ```
-cd 프로젝트경로/ulsan-network
+cd luxurytransactions(프로젝트경로)/ulsan-network
 ./startnetwork.sh
 ./createchannel.sh
 ./setAnchorPeerUpdate.sh
