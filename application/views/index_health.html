@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Health Service</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <!-- jquery cdn 추가 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-md">
+            <br>
+            <h1>Welcome to <br>GOODS Service <br>Prototype</h1>
+            <p>진료 이력관리를 위한 웹서비스입니다.</p>
+        </div>
+        <div class="container-md">
+            <a href='./adminwallet.html' class="btn btn-success">관리자 인증서 생성</a><br><br>
+            <a href='./userwallet.html' class="btn btn-success">사용자 인증서 생성</a><br><br>
+
+            <ul class="list-group">
+                <li class="list-group-item"><a href='#register'>진료기록 등록</a></li>
+                <li class="list-group-item"><a href='#query'>진료기록 조회</a></li>
+                <li class='list-group-item disabled' aria-disabled="true"><a>진료기록 이력조회</a> </li>
+            </ul>
+
+            <div class="container" id="register">
+                <br>
+                <h2>HEALTH 등록</h2><br>
+                <!-- 폼 -> button, result 수정 및 추가 -->
+
+                <label class="form-label">Certificate:</label><br>
+                <input class="form-control" type="text" id="rcert" value=""><br>
+
+                <label class="form-label">ID:</label><br>
+                <input class="form-control" type="text" id="rid" value=""><br>
+
+                <label class="form-label">환자이름:</label><br>
+                <input class="form-control" type="text" id="rname" value=""><br>
+
+                <label class="form-label">code:</label><br>
+                <input class="form-control" type="text" id="rcode" value=""><br>
+
+                <!-- <input class="btn btn-outline-primary" type="submit" value="Submit"> -->
+                <button id="register_btn" class="btn btn-warning">진료 등록</button>
+
+                <p>If you click the "Submit" button, the form-data will be sent to a page called "/health".</p>
+                <p id="register_result"></p>
+            </div>
+
+
+
+            <div class="container" id="query">
+                <br>
+                <h2>HEALTH 조회</h2><br>
+                <!-- 폼 -> button, result 수정 및 추가 -->
+
+                <label class="form-label">Certificate:</label><br>
+                <input class="form-control" type="text" id="qcert" value=""><br>
+
+                <label class="form-label">ID:</label><br>
+                <input class="form-control" type="text" id="qid" value=""><br>
+
+                <!-- <input class="btn btn-outline-primary" type="submit" value="Submit"> -->
+                <button id="query_btn" class="btn btn-warning">Health 조회</button>
+
+                <p>If you click the "Submit" button, the form-data will be sent to a page called "/health".</p>
+                <div>
+                    <p id="query_result"></p>
+                    <table class="table table-hover">
+                        <tbody id="query_table">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <br><br><br><br><br><br><br>
+        </div>
+</body>
+
+<script>
+    $("#register_btn").click(() => {
+        const rcert = $("#rcert").val();
+        const rid = $("#rid").val();
+        const rname = $("#rname").val();
+        const rcode = $("#rcode").val();
+
+        $.post("/health", { rcert, rid, rname, rcode }, (data, status) => {
+
+            if (data.result == "success") {
+                $("#register_result").empty();
+                $("#register_result").append('<i class="fa-regular fa-circle-check fa-5x" ></i><br>')
+                const res = JSON.stringify(data);
+                $("#register_result").append(res);
+            } else {
+                $("#register_result").empty();
+                const res = JSON.stringify(data);
+                $("#register_result").append('<i class="fa-regular fa-circle-xmark fa-5x"></i><br>')
+                $("#register_result").append(res);
+            }
+        });
+    });
+
+    $("#query_btn").click(() => {
+        const qcert = $("#qcert").val();
+        const qid = $("#qid").val();
+
+        $.get("/health", { qcert, qid }, (data, status) => {
+
+            if (data.result == "success") {
+                $("#query_result").empty();
+                $("#query_table").empty();
+
+                $("#query_result").append('<i class="fa-regular fa-circle-check fa-5x" ></i><br>')
+                const res = JSON.stringify(data);
+                $("#query_result").append(res);
+
+                // table update 
+                $("#query_table").append("<tr><td>number</td><td>" + data.message.number + "</td></tr>");
+                $("#query_table").append("<tr><td>name</td><td>" + data.message.name + "</td></tr>");
+                $("#query_table").append("<tr><td>KCD</td><td>" + data.message.KCD + "</td></tr>");
+                $("#query_table").append("<tr><td>doctor</td><td>" + data.message.doctor + "</td></tr>");
+
+            } else {
+                $("#query_result").empty();
+                const res = JSON.stringify(data);
+                $("#query_result").append('<i class="fa-regular fa-circle-xmark fa-5x"></i><br>')
+                $("#query_result").append(res);
+            }
+        });
+    });
+</script>
+
+<style>
+    body {
+        background-color: lightblue;
+
+
+    }
+</style>
+
+</html>
