@@ -28,7 +28,7 @@ source ~/.bashrc
   1. 네트워크 초기화 
 ```
 docker rm -f $(docker ps -aq)
-docker rmi -f $(docker images dev-*)
+docker rmi -f $(docker images dev-* -q)
 docker network prune
 docker volume prune
 ```
