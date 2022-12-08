@@ -1,4 +1,5 @@
-# luxury transactions implemented with blockchain technology
+# Luxury transactions
+Luxury transactions implemented with blockchain technology
 
 # ulsan-project
 2022 울산 블록체인교육 마지막 기수 미니프로젝트
