@@ -6,6 +6,7 @@ Luxury transactions implemented with blockchain technology
 
 # 선행조건
   - hyperledger fabric 2.2 LTS 설치
+    ~/.bashrc 파일 마지막에 추가 export PATH=$PATH:/usr/local/go/bin:~/fabric-samples/bin
   - docker, docker-compose 설치
   - jq 설치
 
