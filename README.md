@@ -32,6 +32,11 @@ docker rmi -f $(docker images dev-* -q)
 docker network prune
 docker volume prune
 ```
+  네트워크를 초기화 했다면 
+  지갑 폴더 지우기
+```
+rm -rf wallet
+```
   2. 네트워크 수행
 ```
 cd luxurytransactions(프로젝트경로)/ulsan-network
@@ -72,11 +77,7 @@ npm install
 node server.js
 ```
 브라우저 : 
-  네트워크를 초기화 했다면 
-  지갑 폴더 지우기
-```
-rm -rf wallet
-```
+
 
   localhost:3000 접속
   
