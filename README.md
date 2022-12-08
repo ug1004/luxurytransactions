@@ -35,6 +35,7 @@ docker volume prune
   네트워크를 초기화 했다면 
   지갑 폴더 지우기
 ```
+cd luxurytransactions(프로젝트경로)/application
 rm -rf wallet
 ```
   2. 네트워크 수행
