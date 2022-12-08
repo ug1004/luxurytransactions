@@ -1,5 +1,7 @@
+luxury transactions implemented with blockchain technology
+
 # ulsan-project
-2022 울산 블록체인교육 마지막 기수 미니프로젝트
+2022 울산 블록체인교육 마지막 기수 미니프로젝
 
 # 선행조건
   - hyperledger fabric 2.2 LTS 설치
