@@ -19,8 +19,7 @@ source ~/.bashrc
   - docker, docker-compose 설치
   - jq 설치
   
-
-  connection-org1.json 복사하기
+  - connection-org1.json 복사하기
 ```
   cp 프로젝트경로/ulsan-project/organizations/peerOrganization/org1.example.com/connection-org1.json ./
 ```
