@@ -45,8 +45,8 @@ peer channel list
 ```
   2. 체인코드 확인
 ```
-peer lifecycle chaincode --queryinstalled
-peer lifecycle chaincode --querycommitted -C 채널명
+peer lifecycle chaincode queryinstalled
+peer lifecycle chaincode querycommitted -C ulsanchannel
 ```
 # 어플리케이션 수행
 ```
