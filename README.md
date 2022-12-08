@@ -18,6 +18,12 @@ source ~/.bashrc
 ```
   - docker, docker-compose 설치
   - jq 설치
+  
+```
+  connection-org1.json 복사하기
+```
+  cp 프로젝트경로/ulsan-project/organizations/peerOrganization/org1.example.com/connection-org1.json ./
+```
 
 # 네트워크 수행
   1. 네트워크 초기화 
@@ -35,6 +41,7 @@ cd 프로젝트경로/ulsan-network
 ./setAnchorPeerUpdate.sh
 ./ccp-generate.sh
 ```
+
   3. 환경설정
 ```
 export FABRIC_CFG_PATH=${PWD}/config
@@ -70,11 +77,7 @@ node server.js
   지갑 폴더 지우기
 ```
 rm -rf wallet
-```
-  connection-org1.json 복사하기
-```
-  cp 프로젝트경로/ulsan-project/organizations/peerOrganization/org1.example.com/connection-org1.json ./
-```
+
 
   localhost:3000 접속
   
