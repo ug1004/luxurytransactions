@@ -60,7 +60,11 @@ export CORE_PEER_ADDRESS=localhost:7051
 ```
 peer channel list
 ```
-
+  5. go
+```
+cd luxurytransactions(프로젝트경로)/contract/goods/v0.9
+go mod tidy
+```
 # 체인코드 배포
   1. deployCC.sh 내부에 관련 정보변경 ( 체인코드 이름, 버전, 정책, 소스코드경로, 채널)
 ```
