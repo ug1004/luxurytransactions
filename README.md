@@ -15,6 +15,9 @@ export PATH=$PATH:/usr/local/go/bin:~/fabric-samples/bin
 ```
 ```
 source ~/.bashrc
+echo $GOPATH
+echo $PATH
+```
 ```
   - docker, docker-compose 설치
   - jq 설치
