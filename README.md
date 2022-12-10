@@ -8,16 +8,13 @@ Luxury transactions implemented with blockchain technology
     ~/.bashrc 파일 마지막에 추가 
 ```
 nano ~/.bashrc
-```
-```
 export GOPATH=~/go
 export PATH=$PATH:/usr/local/go/bin:~/fabric-samples/bin
-```
-```
 source ~/.bashrc
 echo $GOPATH
 echo $PATH
 ```
+
 ```
   - docker, docker-compose 설치
   - jq 설치
