@@ -3,6 +3,8 @@ Luxury transactions implemented with blockchain technology
 
 2022 울산 블록체인교육 마지막 기수 미니프로젝트
 
+https://www.youtube.com/watch?v=O09Pcng9YPc
+
 # 선행조건
   - hyperledger fabric 2.2 LTS 설치
     ~/.bashrc 파일 마지막에 추가 
