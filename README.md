@@ -1,7 +1,7 @@
 # A Blockchain System for History Management of Luxury
 Luxury transactions implemented with blockchain technology
 
-2022 울산 블록체인교육 마지막 기수 미니프로젝트
+블록체인트미니프로젝트
 
 https://www.youtube.com/watch?v=O09Pcng9YPc
 
